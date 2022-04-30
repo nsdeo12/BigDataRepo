@@ -1,0 +1,41 @@
+Git guide
+https://rogerdudler.github.io/git-guide/
+
+Spark components
+
+
+Spark architecture
+
+Spark can run in 
+	• Client Mode(Driver reside in the client machine)
+	• Cluster Mode(Driver resides in the cluster alongside executors)
+	• Local Mode(Both driver and executors reside in a single JVM)
+
+
+
+	1. Spark shell creates a spark session by a driver program
+	A request goes to yarn resource manager to create a yarn application
+	2. The RM creates a application master (to  create an AM container)
+	3. AM container in turn request back to RM for additional containers or worker nodes
+	4. RM creates new containers for worker nodes
+	5. AM starts new executors in these containers
+	6. These executors directly interact with driver program to finish the Task
+	
+	
+	• The whole process requires a data structure to hold the data in spark.
+	• The datastructure can be RDD, Dataframe or Dataset
+
+	• RDD was the oldest and available in spark 1.0 and slowest among the three.
+	• Spark 2.0 onwords dataframe is available and dataset is the newest addition.
+
+	• Both dataframe and datasets are compiled to an RDD.
+	• RDD is resilient distributed dataset.
+		○ It’s a collection of data(holds data to be a scala collection)
+		○ Its resilient(fault tolerant)
+		○ Partitioned(divided into small pieces)
+		○ Distributed(Over cluster)
+		○ Immutable(Can't be changed or altered once defined)
+An RDD can be created by
+	A) loading some data from source
+	B)creating an RDD from another through transformation
+
