@@ -1,0 +1,20 @@
+
+cloned your repository
+	git clone "url of your repository"
+
+went into the folder
+and created a document
+
+check the status
+git status
+
+the newly created file is shown in red
+To commit it first add the file
+git add <filename>
+
+commit the file before pushing into remote repository(github/Azure data repository)
+git commit -m "some message"
+
+push the file/document to the remote repository
+git push origin/<branchname>
+
